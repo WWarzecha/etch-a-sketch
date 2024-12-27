@@ -1,12 +1,19 @@
 const ROWS = 16;
 const COLS = 16;
 
+function updateColor(event){
+    const div = event.target;
+    div.style.backgroundColor = "red";
+
+}
+
 function createGridUnit(){
     const gridUnit = document.createElement("div");
     gridUnit.style.boxSizing = "border-box";
     gridUnit.style.minHeight = `${640/ROWS}px`;
     gridUnit.style.minWidth = `${640/COLS}px`;
     gridUnit.style.border = "1px solid black";
+    gridUnit.addEventListener("mouseover", event => updateColor(event));
     return gridUnit;
 }
 
